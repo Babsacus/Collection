@@ -1,5 +1,5 @@
-# Collection
-Collection is a Rust library containing various data structure implementations. Below is a hierachial flow of all available traits and structs in this library.
+# Structures
+Structures is a Rust library containing various data structure implementations. Below is a hierachial flow of all available traits and structs in this library.
 
 Collection (Trait)
 - Full (Trait)
