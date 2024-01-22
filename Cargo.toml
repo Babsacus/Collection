@@ -1,7 +1,10 @@
 [package]
-name = "collection"
-version = "0.1.0"
+name = "structures"
+authors = ["Babsacus"]
+version = "1.0.0"
 edition = "2021"
+description = "A library of collection data structures."
+license = "MIT"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
