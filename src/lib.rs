@@ -1,14 +1,14 @@
 extern crate alloc;
 extern crate core;
 
-mod collection;
-mod array;
-mod queue;
-mod stack;
-mod set;
-mod map;
-mod grid;
-mod supers;
+pub mod collection;
+pub mod array;
+pub mod queue;
+pub mod stack;
+pub mod set;
+pub mod map;
+pub mod grid;
+pub mod supers;
 
 #[cfg(test)]
 mod tests {

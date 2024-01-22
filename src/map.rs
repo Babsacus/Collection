@@ -448,6 +448,7 @@ impl<K, V> Map<K, V>
     pub fn new() -> Self { Map { arr: Vec::new() } }
 
     /// Creates a new 'map' that contains the elements in the specified vector.
+    #[allow(dead_code)]
     pub fn from_vec(v: &Vec<KeyValue<K, V>>) -> Self {
         let mut map: Map<K, V> = Map { arr: Vec::new() };
 
@@ -869,9 +870,11 @@ impl<V> Dictionary<V>
     }
 
     /// Creates a new empty 'dictionary'.
+    #[allow(dead_code)]
     pub fn new() -> Self { Dictionary { arr: Vec::new() } }
 
     /// Creates a new 'dictionary' that contains the elements in the specified vector.
+    #[allow(dead_code)]
     pub fn from_vec(v: &Vec<KeyValue<String, V>>) -> Self {
         let mut dict: Dictionary<V> = Dictionary { arr: Vec::new() };
 
@@ -1138,6 +1141,7 @@ impl<K, V> HashMap<K, V>
     pub fn new() -> Self { HashMap { map: std::collections::HashMap::new() } }
 
     /// Creates a new 'hash map' that contains the elements in the specified 'vector'.
+    #[allow(dead_code)]
     pub fn from_vec(v: &Vec<KeyValue<K, V>>) -> Self {
         let mut hmap: HashMap<K, V> = HashMap { map: std::collections::HashMap::new() };
 

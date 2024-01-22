@@ -65,16 +65,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "collection"
-version = "0.1.0"
-dependencies = [
- "chrono",
- "len-trait",
- "rand",
- "str-macro",
-]
-
-[[package]]
 name = "core-foundation-sys"
 version = "0.8.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -218,6 +208,16 @@ name = "str-macro"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9b7514866270741c7b03dd36e2c68f71cf064b230e8217c81bbd4d619d564864"
+
+[[package]]
+name = "structures"
+version = "1.0.2"
+dependencies = [
+ "chrono",
+ "len-trait",
+ "rand",
+ "str-macro",
+]
 
 [[package]]
 name = "syn"

@@ -284,6 +284,7 @@ impl<T> Deque<T>
     }
 
     /// Creates a new 'deque' that contains the elements in the specified 'vector'.
+    #[allow(dead_code)]
     pub fn from_vec(v: &Vec<T>) -> Self {
         let mut deque: Deque<T> = Deque { deq: VecDeque::new() };
 
@@ -295,6 +296,7 @@ impl<T> Deque<T>
     }
 
     /// Creates a new 'deque' with the specified capacity.
+    #[allow(dead_code)]
     pub fn with_capacity(capacity: usize) -> Self {
         Deque { deq: VecDeque::with_capacity(capacity) }
     }

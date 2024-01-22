@@ -46,6 +46,7 @@ impl Pos {
     }
 
     /// Returns the distance from this 'position' and another 'position'.
+    #[allow(dead_code)]
     pub fn dist_from(&self, other: Pos) -> f64 {
         let ret: f64 = ((other.row - self.row) * (other.row - self.row) +
             (other.col - self.col) * (other.col - self.col)) as f64;
@@ -53,11 +54,13 @@ impl Pos {
     }
 
     /// Creates a new 'position' initialized at 0, 0.
+    #[allow(dead_code)]
     pub fn new() -> Self {
         Pos { row: 0, col: 0 }
     }
 
     /// Sets this 'position' to the specified row and column.
+    #[allow(dead_code)]
     pub fn move_to(&mut self, row: usize, col: usize) {
         self.row = row;
         self.col = col;
@@ -663,6 +666,7 @@ impl<T> Grid<T>
         T: PartialEq + PartialOrd + Clone + Default + Debug,
 {
     /// Creates a new empty 'grid'.
+    #[allow(dead_code)]
     pub fn new() -> Self {
         Grid {
             arr: Vec::new(),
@@ -673,6 +677,7 @@ impl<T> Grid<T>
 
     /// Creates a new 'grid' with the specified number of rows and columns that have all elements
     /// set to the specified value.
+    #[allow(dead_code)]
     pub fn new_def(rows: usize, cols: usize, val: T) -> Self {
         let mut grid: Grid<T> = Grid {
             arr: Vec::new(),
@@ -692,6 +697,7 @@ impl<T> Grid<T>
 
     /// Creates a new 'grid' with the specified number of rows and columns that have all elements
     /// set to their default value.
+    #[allow(dead_code)]
     pub fn new_size(rows: usize, cols: usize) -> Self {
         let mut grid: Grid<T> = Grid {
             arr: Vec::new(),
@@ -711,6 +717,7 @@ impl<T> Grid<T>
 
     /// Creates a new 'grid' with the specified number of rows and columns that contains the
     /// elements in the specified vector up to the length of the 'grid'.
+    #[allow(dead_code)]
     pub fn from_vec(rows: usize, cols: usize, v: &Vec<T>) -> Self {
         let mut grid: Grid<T> = Grid {
             arr: Vec::new(),
@@ -748,14 +755,18 @@ pub enum CellType {
     /// Empty 'cell'.
     Empty,
     /// 64-bit floating point 'cell' data type.
+    #[allow(dead_code)]
     Float(f64),
     /// 64-bit signed integer 'cell' data type.
+    #[allow(dead_code)]
     Integer(i64),
     /// Local date/time 'cell' data type.
+    #[allow(dead_code)]
     LocalDateTime(DateTime<Local>),
     /// String 'cell' data type.
     String(String),
     /// UTC date/time 'cell' data type.
+    #[allow(dead_code)]
     UTCDateTime(DateTime<Utc>),
 }
 
@@ -834,6 +845,7 @@ impl TableCell for Cell {
 // Cell functions
 impl Cell {
     /// Creates a new empty 'cell' at 'position' (0, 0).
+    #[allow(dead_code)]
     pub fn new() -> Self {
         Cell {
             data: CellType::Empty,
@@ -841,6 +853,7 @@ impl Cell {
     }
 
     /// Create a new 'cell' with the specified data.
+    #[allow(dead_code)]
     pub fn new_data(data: CellType) -> Self {
         Cell {
             data,
@@ -1514,6 +1527,7 @@ impl GridCollection<Cell> for Table {
 // Table functions
 impl Table {
     /// Creates a new empty 'table' without column or row headers.
+    #[allow(dead_code)]
     pub fn new() -> Self {
         Table {
             arr: Vec::new(),
@@ -1526,6 +1540,7 @@ impl Table {
 
     /// Creates a new 'table' with the specified number of rows and columns that have all
     /// elements set to their default value but no column or row headers.
+    #[allow(dead_code)]
     pub fn new_size(rows: usize, cols: usize) -> Self {
         let mut table: Table = Table {
             arr: Vec::new(),
@@ -1551,6 +1566,7 @@ impl Table {
     /// Creates a new 'table' with the specified number of rows and columns that contains the
     /// cells in the specified vector up to the length of the 'table' but no column or row
     /// headers.
+    #[allow(dead_code)]
     pub fn from_vec(rows: usize, cols: usize, v: &Vec<CellType>) -> Self {
         let mut table: Table = Table {
             arr: Vec::new(),
@@ -1585,17 +1601,20 @@ impl Table {
     }
 
     /// Removes column headers from this 'table'.
+    #[allow(dead_code)]
     pub fn no_col_headers(&mut self) {
         self.col_header = None;
     }
 
     /// Removes both column and row headers from this 'table'.
+    #[allow(dead_code)]
     pub fn no_headers(&mut self) {
         self.col_header = None;
         self.row_header = None;
     }
 
     /// Removes row headers from this 'table'.
+    #[allow(dead_code)]
     pub fn no_row_headers(&mut self) {
         self.row_header = None;
     }
@@ -1606,6 +1625,7 @@ impl Table {
     ///
     /// This function panics if the specified index is out-of-bounds or if their is no column
     /// header.
+    #[allow(dead_code)]
     pub fn set_col_header(&mut self, index: usize, header: &str) {
         if index >= self.cols {
             panic!("Cannot set column header due to out-of-bounds index.");
@@ -1623,6 +1643,7 @@ impl Table {
     ///
     /// This function panics if the length of the specified vector does not equal the
     /// number of columns.
+    #[allow(dead_code)]
     pub fn set_col_headers(&mut self, headers: Vec<String>) {
         if headers.len() != self.cols {
             panic!("Cannot set column headers due to invalid vector length.");
@@ -1646,6 +1667,7 @@ impl Table {
     ///
     /// This function panics if the specified index is out-of-bounds or if their is no row
     /// header.
+    #[allow(dead_code)]
     pub fn set_row_header(&mut self, index: usize, header: &str) {
         if index >= self.rows {
             panic!("Cannot set row header due to out-of-bounds index.");
@@ -1663,6 +1685,7 @@ impl Table {
     ///
     /// This function panics if the length of the specified vector does not equal the
     /// number of rows.
+    #[allow(dead_code)]
     pub fn set_row_headers(&mut self, headers: Vec<String>) {
         if headers.len() != self.rows {
             panic!("Cannot set row headers due to invalid vector length.");
@@ -2141,6 +2164,7 @@ impl GridCollection<f32> for AdjacencyMatrix {
 // AdjacencyMatrix functions
 impl AdjacencyMatrix {
     /// Creates a new empty 'adjacency matrix'.
+    #[allow(dead_code)]
     pub fn new() -> Self {
         AdjacencyMatrix {
             arr: Vec::new(),
@@ -2151,6 +2175,7 @@ impl AdjacencyMatrix {
 
     /// Creates a new 'adjacency matrix' with the specified number of rows and columns that have
     /// all elements set to the specified value.
+    #[allow(dead_code)]
     pub fn new_def(rows: usize, cols: usize, val: f32) -> Self {
         let mut amtx: AdjacencyMatrix = AdjacencyMatrix {
             arr: Vec::new(),
@@ -2170,6 +2195,7 @@ impl AdjacencyMatrix {
 
     /// Creates a new 'adjacency matrix' with the specified number of rows and columns that have
     /// all elements set to their default value.
+    #[allow(dead_code)]
     pub fn new_size(rows: usize, cols: usize) -> Self {
         let mut amtx: AdjacencyMatrix = AdjacencyMatrix {
             arr: Vec::new(),
@@ -2189,6 +2215,7 @@ impl AdjacencyMatrix {
 
     /// Creates a new 'adjacency matrix' with the specified number of rows and columns that
     /// contains the elements in the specified vector up to the length of the 'adjacency matrix'.
+    #[allow(dead_code)]
     pub fn from_vec(rows: usize, cols: usize, v: &Vec<f32>) -> Self {
         let mut amtx: AdjacencyMatrix = AdjacencyMatrix {
             arr: Vec::new(),

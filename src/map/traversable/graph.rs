@@ -325,21 +325,29 @@ pub struct Graph<V, const DIRECTED: bool, const WEIGHTED: bool>
 }
 
 /// An undirected, unweighted graph type.
+#[allow(dead_code)]
 pub type UUGraph<V> = Graph<V, false, false>;
 /// An undirected, weighted graph type.
+#[allow(dead_code)]
 pub type UWGraph<V> = Graph<V, false, true>;
 /// A directed, unweighted graph type.
+#[allow(dead_code)]
 pub type DUGraph<V> = Graph<V, true, false>;
 /// A directed, weighted graph type.
+#[allow(dead_code)]
 pub type DWGraph<V> = Graph<V, true, true>;
 
 /// An undirected, unweighted edge type.
+#[allow(dead_code)]
 pub type UUGraphEdge = UUEdge<usize>;
 /// An undirected, weighted edge type.
+#[allow(dead_code)]
 pub type UWGraphEdge = UWEdge<usize>;
 /// A directed, unweighted edge type.
+#[allow(dead_code)]
 pub type DUGraphEdge = DUEdge<usize>;
 /// A directed, weighted edge type.
+#[allow(dead_code)]
 pub type DWGraphEdge = DWEdge<usize>;
 
 // Clear function for Graph
@@ -1164,6 +1172,7 @@ impl<V, const DIRECTED: bool, const WEIGHTED: bool> Graph<V, DIRECTED, WEIGHTED>
         V: Clone + Debug + PartialEq + PartialOrd,
 {
     /// Creates a new empty 'graph'.
+    #[allow(dead_code)]
     pub fn new() -> Self {
         Graph {
             amtx: AdjacencyMatrix::new(),
@@ -1177,6 +1186,7 @@ impl<V, const DIRECTED: bool, const WEIGHTED: bool> Graph<V, DIRECTED, WEIGHTED>
     /// 'node' b is created. If this 'graph' is an undirected 'graph', an 'edge' from
     /// 'node' a to 'node' b and from 'node' b to 'node' a is created with both 'edges'
     /// having the same weight.
+    #[allow(dead_code)]
     pub fn connect(&mut self, edge: Edge<usize, DIRECTED, WEIGHTED>) -> bool {
         // If either node does not exist, return false.
         if edge.node_a >= self.nodes.len() || edge.node_b >= self.nodes.len() {

@@ -336,6 +336,7 @@ impl<T> AdjacencyList<T>
         T: PartialEq + PartialOrd + Clone + Debug,
 {
     /// Creates a new empty 'adjacency list'.
+    #[allow(dead_code)]
     pub fn new() -> Self { AdjacencyList { arr: Vec::new() } }
 }
 
@@ -614,5 +615,6 @@ impl<T> SuperList<T>
         T: PartialEq + PartialOrd + Clone + Default + Copy + Debug,
 {
     /// Creates a new empty 'super list'.
+    #[allow(dead_code)]
     pub fn new() -> Self { SuperList { arr: Vec::new() } }
 }

@@ -581,5 +581,6 @@ impl<T> List<T>
     pub fn new() -> Self { List { arr: Vec::new() } }
 
     /// Creates a new 'list' that contains the elements in the specified vector.
+    #[allow(dead_code)]
     pub fn from_vec(v: &Vec<T>) -> Self { List { arr: v.clone() } }
 }

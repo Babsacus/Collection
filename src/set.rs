@@ -283,6 +283,7 @@ impl<T> Set<T>
         T: PartialEq + PartialOrd + Clone + Debug,
 {
     /// Creates a new empty 'set'.
+    #[allow(dead_code)]
     pub fn new() -> Self {
         Set {
             arr: Vec::new(),
@@ -293,6 +294,7 @@ impl<T> Set<T>
     /// Creates a new infinite 'set'. This is accomplished by marking this 'set' as the complement
     /// of an empty 'set' and leaving the 'set' empty. By definition, this means the opposite of an
     /// empty 'set', which is an infinite 'set'.
+    #[allow(dead_code)]
     pub fn new_inf() -> Self {
         Set {
             arr: Vec::new(),
@@ -301,6 +303,7 @@ impl<T> Set<T>
     }
 
     /// Creates a new 'set' that contains the elements in the specified 'vector'.
+    #[allow(dead_code)]
     pub fn from_vec(v: &Vec<T>) -> Self {
         Set {
             arr: v.clone(),
@@ -312,6 +315,7 @@ impl<T> Set<T>
     /// This is accomplished by marking the new 'set' as the complement of the specified 'vector'
     /// and having the new 'set' contain the items in the specified 'vector'. By definition, this
     /// means that the new 'set' is everything except the items it contains.
+    #[allow(dead_code)]
     pub fn not_from_vec(v: &Vec<T>) -> Self {
         Set {
             arr: v.clone(),
@@ -320,6 +324,7 @@ impl<T> Set<T>
     }
 
     /// Creates a new 'set' with the specified capacity.
+    #[allow(dead_code)]
     pub fn with_capacity(capacity: usize) -> Self {
         Set {
             arr: Vec::with_capacity(capacity),
@@ -329,6 +334,7 @@ impl<T> Set<T>
 
     /// Creates a new 'set' that is the intersection of the specified 'sets', meaning it will
     /// contain the items that are in both of the specified 'sets'.
+    #[allow(dead_code)]
     pub fn intersection_of(a: &Set<T>, b: &Set<T>) -> Self {
         let mut set: Set<T> = Set::new();
 
@@ -395,6 +401,7 @@ impl<T> Set<T>
 
     /// Creates a new 'set' that is the union of the specified 'sets', meaning it will contain all
     /// items from both of the specified 'sets'.
+    #[allow(dead_code)]
     pub fn union_of(a: &Set<T>, b: &Set<T>) -> Self {
         let mut set: Set<T> = Set::new();
 
@@ -434,6 +441,7 @@ impl<T> Set<T>
 
     /// Creates a new 'set' that is the difference of the specified 'sets', meaning it will contain
     /// all items from the first specified 'set' that are not also in the second specified 'set'.
+    #[allow(dead_code)]
     pub fn difference_of(a: &Set<T>, b: &Set<T>) -> Self {
         let mut set: Set<T> = Set::new();
 
@@ -483,6 +491,7 @@ impl<T> Set<T>
     /// complement of the specified 'set' and having the new 'set' contain the items in the
     /// specified 'set'. By definition, this means that the new 'set' is everything except the items
     /// it contains.
+    #[allow(dead_code)]
     pub fn complement_of(s: &Set<T>) -> Self {
         let mut set: Set<T> = Set::new_inf();
 
@@ -497,19 +506,23 @@ impl<T> Set<T>
     /// of its contents, it now contains everything except the elements listed in its contents.
     /// If this 'set' was a complement of its contents, it now contains only the elements listed
     /// in its contents.
+    #[allow(dead_code)]
     pub fn complement(&mut self) { self.not = !self.not }
 
     /// Returns true if this 'set' is marked as a complement of its contents, meaning this 'set'
     /// contains everything except the listed contents. This also means this 'set' is considered
     /// an infinite set.
+    #[allow(dead_code)]
     pub fn is_complement(&self) -> bool { self.not }
 
     /// Returns true if this 'set' is a finite set, meaning it only contains the elements listed
     /// in its contents.
+    #[allow(dead_code)]
     pub fn is_finite(&self) -> bool { !self.not }
 
     /// Returns true if this 'set' is an infinite set, meaning it's also marked as a complement of
     /// its contents.
+    #[allow(dead_code)]
     pub fn is_infinite(&self) -> bool { self.not }
 }
 
@@ -696,6 +709,7 @@ impl<T> SetCollection<T> for HashSet<T>
 
     /// Removes all elements from this 'hash set' that are not in the specified vector.
     /// Returns the new size of this 'hash set' after retaining.
+    #[allow(dead_code)]
     fn retain_all(&mut self, vec: Vec<T>) -> usize {
         for i in self.clone().into_iter() {
             if !vec.contains(&i.clone()) {
@@ -713,9 +727,11 @@ impl<T> HashSet<T>
         T: PartialEq + PartialOrd + Clone + Debug + Eq + Hash,
 {
     /// Creates a new empty 'hash set'.
+    #[allow(dead_code)]
     pub fn new() -> Self { HashSet { set: std::collections::HashSet::new() } }
 
     /// Creates a new 'hash set' that contains the elements in the specified 'vector'.
+    #[allow(dead_code)]
     pub fn from_vec(v: &Vec<T>) -> Self {
         let mut hset: HashSet<T> = HashSet { set: std::collections::HashSet::new() };
 

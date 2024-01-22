@@ -244,6 +244,7 @@ impl<K, V> TreeTraverser<K, V>
         V: PartialEq + PartialOrd + Clone + Debug,
 {
     /// Creates a new empty 'tree traverser'.
+    #[allow(dead_code)]
     pub fn new() -> Self {
         TreeTraverser {
             mode: TreeTraversalMode::Inorder,
@@ -1570,6 +1571,7 @@ impl<K, V> Tree<K, V>
     }
 
     /// Creates a new 'tree' with the specified root 'node'.
+    #[allow(dead_code)]
     pub fn new_root(pair: KeyValue<K, V>) -> Self {
         let mut new: Tree<K, V> = Tree {
             nodes: HashMap::new(),
@@ -1588,6 +1590,7 @@ impl<K, V> Tree<K, V>
     }
 
     /// Creates a new 'tree' that contains the elements in the specified vector.
+    #[allow(dead_code)]
     pub fn from_vec(v: &Vec<KeyValue<K, V>>) -> Self {
         let mut tree: Tree<K, V> = Tree::new();
         let mut prev: Option<K> = None;
@@ -1681,6 +1684,7 @@ impl<K, V> Tree<K, V>
     /// Inserts a new 'node' with the specified key and value into this 'tree' as a child of the
     /// 'node' with the specified key position. Returns true if successful. Returns false if the
     /// new key to insert already exists, or if the specified key position is invalid.
+    #[allow(dead_code)]
     pub fn insert_at(&mut self, pos: Option<K>, pair: KeyValue<K, V>) -> bool {
         // If a node with the specified key (pair.0) already exists, return false.
         if self.exists(pair.key.clone()) {
@@ -2015,6 +2019,7 @@ impl<K, V, const BALANCED: bool> BinaryTreeTraverser<K, V, BALANCED>
         V: PartialEq + PartialOrd + Clone + Debug,
 {
     /// Creates a new empty 'binary tree traverser'.
+    #[allow(dead_code)]
     pub fn new() -> Self {
         BinaryTreeTraverser {
             mode: BinaryTreeTraversalMode::Inorder,
@@ -3389,6 +3394,7 @@ impl<K, V, const BALANCED: bool> BinaryTree<K, V, BALANCED>
         V: PartialEq + PartialOrd + Clone + Debug,
 {
     /// Creates a new empty 'binary tree'.
+    #[allow(dead_code)]
     pub fn new() -> Self {
         let new: BinaryTree<K, V, BALANCED> = BinaryTree {
             nodes: HashMap::new(),
@@ -3421,6 +3427,7 @@ impl<K, V, const BALANCED: bool> BinaryTree<K, V, BALANCED>
     }
 
     /// Creates a new 'binary tree' that contains the elements in the specified vector.
+    #[allow(dead_code)]
     pub fn from_vec(v: &Vec<KeyValue<K, V>>) -> Self {
         let mut tree: BinaryTree<K, V, BALANCED> = BinaryTree::new();
 

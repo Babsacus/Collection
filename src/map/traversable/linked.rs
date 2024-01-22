@@ -112,6 +112,7 @@ impl<V> LinkedListTraverser<V>
         V: PartialEq + PartialOrd + Clone + Debug,
 {
     /// Creates a new empty 'linked list traverser'.
+    #[allow(dead_code)]
     pub fn new() -> Self {
         LinkedListTraverser {
             key: None,
@@ -616,6 +617,7 @@ impl<V> LinkedList<V>
         V: PartialEq + PartialOrd + Clone + Debug,
 {
     /// Creates a new circular 'linked list' that contains the elements in the specified vector.
+    #[allow(dead_code)]
     pub fn circular_from_vec(v: &Vec<V>) -> Self {
         let mut list: LinkedList<V> = LinkedList::new_circular();
         let mut index: usize = 0;
@@ -637,6 +639,7 @@ impl<V> LinkedList<V>
     }
 
     /// Creates a new empty circular 'linked list'.
+    #[allow(dead_code)]
     pub fn new_circular() -> Self {
         LinkedList {
             circular: true,
@@ -645,6 +648,7 @@ impl<V> LinkedList<V>
     }
 
     /// Creates a new 'linked list' that contains the elements in the specified vector.
+    #[allow(dead_code)]
     pub fn from_vec(v: &Vec<V>) -> Self {
         let mut list: LinkedList<V> = LinkedList::new();
         let mut index: usize = 0;
@@ -1326,6 +1330,7 @@ impl<V> DoublyLinkedList<V>
 {
     /// Creates a new circular 'doubly linked list' that contains the elements in the specified
     /// vector.
+    #[allow(dead_code)]
     pub fn circular_from_vec(v: &Vec<V>) -> Self {
         let mut list: DoublyLinkedList<V> = DoublyLinkedList::new_circular();
         let mut index: usize = 0;
@@ -1347,6 +1352,7 @@ impl<V> DoublyLinkedList<V>
     }
 
     /// Creates a new empty circular 'doubly linked list'.
+    #[allow(dead_code)]
     pub fn new_circular() -> Self {
         DoublyLinkedList {
             circular: true,
@@ -1355,6 +1361,7 @@ impl<V> DoublyLinkedList<V>
     }
 
     /// Creates a new 'doubly linked list' that contains the elements in the specified vector.
+    #[allow(dead_code)]
     pub fn from_vec(v: &Vec<V>) -> Self {
         let mut list: DoublyLinkedList<V> = DoublyLinkedList::new();
         let mut index: usize = 0;

@@ -593,11 +593,13 @@ impl<T> Vector<T>
     }
 
     /// Creates a new 'vector' that contains the elements in the specified vector.
+    #[allow(dead_code)]
     pub fn from_vec(v: &Vec<T>) -> Self {
         Vector { arr: v.clone() }
     }
 
     /// Creates a new 'vector' with the specified capacity.
+    #[allow(dead_code)]
     pub fn with_capacity(capacity: usize) -> Self {
         Vector { arr: Vec::with_capacity(capacity) }
     }

@@ -247,6 +247,7 @@ impl<T> Queue<T>
     }
 
     /// Creates a new 'queue' that contains the elements in the specified 'vector'.
+    #[allow(dead_code)]
     pub fn from_vec(v: &Vec<T>) -> Self {
         let mut queue: Queue<T> = Queue { deq: VecDeque::new() };
 
@@ -258,6 +259,7 @@ impl<T> Queue<T>
     }
 
     /// Creates a new 'queue' with the specified capacity.
+    #[allow(dead_code)]
     pub fn with_capacity(capacity: usize) -> Self {
         Queue { deq: VecDeque::with_capacity(capacity) }
     }

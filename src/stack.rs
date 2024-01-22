@@ -224,6 +224,7 @@ impl<T> Stack<T>
     }
 
     /// Creates a new 'stack' that contains the elements in the specified 'vector'.
+    #[allow(dead_code)]
     pub fn from_vec(v: &Vec<T>) -> Self {
         let mut stack: Stack<T> = Stack { deq: VecDeque::new() };
 
@@ -235,6 +236,7 @@ impl<T> Stack<T>
     }
 
     /// Creates a new 'stack' with the specified capacity.
+    #[allow(dead_code)]
     pub fn with_capacity(capacity: usize) -> Self {
         Stack { deq: VecDeque::with_capacity(capacity) }
     }

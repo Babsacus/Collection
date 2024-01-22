@@ -38,12 +38,16 @@ pub struct Edge<K, const DIRECTED: bool, const WEIGHTED: bool>
 }
 
 /// An undirected, unweighted edge type.
+#[allow(dead_code)]
 pub type UUEdge<K> = Edge<K, false, false>;
 /// An undirected, weighted edge type.
+#[allow(dead_code)]
 pub type UWEdge<K> = Edge<K, false, true>;
 /// A directed, unweighted edge type.
+#[allow(dead_code)]
 pub type DUEdge<K> = Edge<K, true, false>;
 /// A directed, weighted edge type.
+#[allow(dead_code)]
 pub type DWEdge<K> = Edge<K, true, true>;
 
 // PartialEq function for Edge
@@ -83,6 +87,7 @@ impl<K, const DIRECTED: bool> Edge<K, DIRECTED, false>
         K: PartialEq + PartialOrd + Clone + Debug,
 {
     /// Creates a new unweighted 'edge' with the specified 'nodes'.
+    #[allow(dead_code)]
     pub fn new(node_a: K, node_b: K) -> Self {
         Edge {
             node_a,
@@ -98,6 +103,7 @@ impl<K, const DIRECTED: bool> Edge<K, DIRECTED, true>
         K: PartialEq + PartialOrd + Clone + Debug,
 {
     /// Creates a new 'edge' with the specified 'nodes' and weight.
+    #[allow(dead_code)]
     pub fn new(node_a: K, node_b: K, weight: f32) -> Self {
         Edge {
             node_a,

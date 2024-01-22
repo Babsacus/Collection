@@ -419,6 +419,7 @@ impl<T, const N: usize> Array<T, N>
 
     /// Creates a new 'array' that contains the elements in the specified vector up to the
     /// length of the 'array'.
+    #[allow(dead_code)]
     pub fn from_vec(v: &Vec<T>) -> Self {
         let mut array: Array<T, N> = Array { arr: [T::default(); N] };
 
