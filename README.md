@@ -1,2 +1,56 @@
 # Collection
-Collection contains source code for various collection data structures implemented in Rust.
+Collection is a Rust library containing various data structure implementations. Below is a hierachial flow of all available traits and structs in this library.
+
+Collection (Trait)
+- Full (Trait)
+- Reversible (Trait)
+- Sortable (Trait)
+- ArrayCollection (Trait)
+  - Array
+  - ListCollection (Trait)
+    - List
+    - VectorCollection (Trait)
+      - Vector
+- GridCollection (Trait)
+  - Pos
+  - Grid
+  - Table
+  - AdjacencyMatrix
+- MapCollection (Trait)
+  - KeyValue
+  - Map
+  - HashMap
+  - TraversableCollection (Trait)
+    - Node
+    - Edge
+    - IntoTraverser (Trait)
+    - Traverser (Trait)
+      - RevTraverser (Trait)
+        - TreeCollectionTraverser (Trait)
+          - BinaryTreeCollectionTraverser (Trait)
+        - GraphCollectionTraverser (Trait)
+    - GraphCollection (Trait)
+      - GraphTraverser
+      - Graph
+    - LinkedCollection (Trait)
+      - LinkedListTraverser
+      - LinkedList
+      - DoublyLinkedListTraverser
+      - DoublyLinkList
+    - TreeCollection (Trait)
+      - TreeTraverser
+      - Tree
+      - BinaryTreeTraverser
+      - BinaryTree
+- QueueCollection (Trait)
+  - Queue
+  - DequeCollection (Trait)
+    - Deque
+- SetCollection (Trait)
+  - Set
+  - HashSet
+- StackCollection (Trait)
+  - Stack
+- SuperCollection (Trait)
+  - AdjacencyList
+  - SuperList
